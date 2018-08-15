@@ -1,0 +1,14 @@
+c:\users\islam_rakymbay\documents\visual studio 2015\Projects\Task6\Task6\bin\Debug\Task6.exe.config
+C:\Users\Islam_Rakymbay\Desktop\Task6\Task6\bin\Debug\Task6.pdb
+C:\Users\Islam_Rakymbay\Desktop\Task6\Task6\obj\Debug\Task6.csprojResolveAssemblyReference.cache
+C:\Users\Islam_Rakymbay\Desktop\Task6\Task6\obj\Debug\Task6.pdb
+C:\Users\Islam_Rakymbay\Desktop\Task6\Task6\bin\Debug\Task6.exe.config
+C:\Users\Islam_Rakymbay\Desktop\Task6\Task6\bin\Debug\Task6.exe
+C:\Users\Islam_Rakymbay\Desktop\Task6\Task6\obj\Debug\Task6.exe
+C:\Users\TheUser\Desktop\Task6\Task6\bin\Debug\Task6.exe.config
+C:\Users\TheUser\Desktop\Task6\Task6\bin\Debug\Task6.exe
+C:\Users\TheUser\Desktop\Task6\Task6\bin\Debug\Task6.pdb
+C:\Users\TheUser\Desktop\Task6\Task6\obj\Debug\Task6.csprojResolveAssemblyReference.cache
+C:\Users\TheUser\Desktop\Task6\Task6\obj\Debug\Task6.csproj.CoreCompileInputs.cache
+C:\Users\TheUser\Desktop\Task6\Task6\obj\Debug\Task6.exe
+C:\Users\TheUser\Desktop\Task6\Task6\obj\Debug\Task6.pdb
