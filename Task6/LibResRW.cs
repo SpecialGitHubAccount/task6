@@ -13,6 +13,7 @@ namespace Task6
 {
     public class LibResRW : LibraryInfrastructure<LibraryResource>, IDisposable
     {
+        
         public LibResRW(Stream stream)
         {
             this.stream = stream;
@@ -42,25 +43,26 @@ namespace Task6
         {
             stream.Position = 0;
             reader = XmlReader.Create(stream);
-            reader.ReadToFollowing("catalog");
+            reader.ReadToFollowing(XmlRootElelement);
             XElement catalog = XElement.ReadFrom(reader) as XElement;
 
             List<LibraryResource> libResources = new List<LibraryResource>();
+            libResCreators = new LibraryResourceCreator[3] 
+            {
+                new BookCreator(),
+                new NewspaperCreator(),
+                new PatentCreator()
+            };
+
             catalog.Elements().ToList().ForEach((libResourceXElement) =>
             {
-                if (libResourceXElement.Name == "book")
+                foreach (var libResourceCreator in libResCreators)
                 {
-                    libResources.Add(Book.CreateBook(libResourceXElement));
-                }
-
-                if (libResourceXElement.Name == "newspaper")
-                {
-                    libResources.Add(Newspaper.CreateNewspaper(libResourceXElement));
-                }
-
-                if (libResourceXElement.Name == "patent")
-                {
-                    libResources.Add(Patent.CreatePatent(libResourceXElement));
+                    LibraryResource libraryResource = libResourceCreator.CreateFromXElementIfMatch(libResourceXElement);
+                    if(libraryResource !=null)
+                    {
+                        libResources.Add(libraryResource);
+                    }
                 }
             });
             return libResources;
@@ -69,13 +71,14 @@ namespace Task6
         public void Write(LibraryResource item)
         {
             XElement data = item.SerializeToXEelement();
-            doc.Element("catalog").Add(data);
+            doc.Element(XmlRootElelement).Add(data);
         }
 
         public void Flush()
         {
             stream.Position = 0;
             doc.Save(stream);
+            stream.Position = 0;
             doc = XDocument.Load(stream);
         }
 
@@ -92,5 +95,8 @@ namespace Task6
         private XmlWriter writer;
         private XDocument doc;
         private readonly Stream stream;
+
+        private LibraryResourceCreator[] libResCreators = null;
+        private static string XmlRootElelement = "catalog";
     }
 }

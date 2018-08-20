@@ -13,20 +13,6 @@ namespace Task6
         public string PublicationPlace { get; set; }
         public int? PublishingYear { get; set; }
 
-        protected override IEnumerable<XAttribute> GetAttributes()
-        {
-            if (!string.IsNullOrEmpty(PublisherName))
-                yield return new XAttribute("publisherName", PublisherName);
-            if (!string.IsNullOrEmpty(PublicationPlace))
-                yield return new XAttribute("publicationPlace", this.PublicationPlace);
-            if (PublishingYear.HasValue)
-                yield return new XAttribute("publishingYear", this.PublishingYear.Value);
-
-            foreach (var item in base.GetAttributes())
-            {
-                yield return item;
-            }
-        }
         public override string ToString()
         {
             string baseStr = base.ToString();

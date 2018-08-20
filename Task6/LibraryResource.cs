@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,20 +19,23 @@ namespace Task6
 
         public override string ToString()
         {
-            return string.Format("Title: {0}\nNote: {1}\nSheets: {2}\n", 
-                !string.IsNullOrEmpty(Title)?Title:"Unknown", 
-                !string.IsNullOrEmpty(Note)? Note: "Unknown", 
+            return string.Format("Title: {0}\nNote: {1}\nSheets: {2}\n",
+                !string.IsNullOrEmpty(Title) ? Title : "Unknown",
+                !string.IsNullOrEmpty(Note) ? Note : "Unknown",
                 SheetsQuantity.HasValue ? SheetsQuantity.Value.ToString() : "Unknown");
         }
 
         protected virtual IEnumerable<XAttribute> GetAttributes()
         {
-            if (!string.IsNullOrEmpty(Note))
-                yield return new XAttribute("note", this.Note);
-            if (Title != null)
-                yield return new XAttribute("title", this.Title);
-            if (SheetsQuantity.HasValue)
-                yield return new XAttribute("sheetsQuantity", SheetsQuantity.Value);
+            foreach (var item in GetType().GetProperties())
+            {
+                var value = item.GetValue(this);
+                if (value != null)
+                {
+                    yield return new XAttribute(item.Name, item.GetValue(this));
+                }
+            }
         }
+
     }
 }

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<catalog>
+  <Book ISBN="ISBN 978-2-4025-9888-4" Author="newAuthor" PublisherName="name" PublicationPlace="ntePlace" PublishingYear="2010" Title="ititl" SheetsQuantity="514" Note="newNote" />
+  <Newspaper Id="1" Date="1999-01-01T00:00:00" ISSN="ISSN 1234-5678" PublisherName="name 2" PublicationPlace="palce 2" PublishingYear="2011" Title="titile 2" SheetsQuantity="4533" Note="note" />
+  <Patent Inventor="inv" Country="kaza" RegistrationNumber="1" ApplicationSubmissionDate="2015-01-01T00:00:00" PublicationDate="2016-02-05T00:00:00" Title="patent" SheetsQuantity="15" Note="note4" />
+  <Book ISBN="ISBN 012-3-4567-8910-1" Author="Zheka" PublisherName="atamura" PublicationPlace="kazakhsstan" PublishingYear="2015" Title="history" SheetsQuantity="600" Note="karagandinec" />
+  <Newspaper Id="1" Date="2051-01-01T00:00:00" ISSN="ISSN 0123-4567" PublisherName="yararka" PublicationPlace="qazaqstan" PublishingYear="2016" Title="novi vestnik" SheetsQuantity="12" Note="gazeta" />
+  <Patent Inventor="inventor X" Country="ukraine" RegistrationNumber="11" ApplicationSubmissionDate="1998-10-01T00:00:00" PublicationDate="2018-08-20T00:00:00" Title="patent" SheetsQuantity="156" Note="ukr" />
+</catalog>
